@@ -53,6 +53,8 @@ COPY SmICSWebApp/Resources/ Resources/
 #RUN Rscript -e "install.packages('plotrix')"
 #RUN Rscript -e "install.packages('/app/RKIAlgorithm/Statistik.dod.tar.gz', repos=NULL, type='source')"
 
+RUN apt-get update && apt-get -y install curl
+
 EXPOSE 80
 EXPOSE 443
 ENV SMICS_VISU_PORT=3231
